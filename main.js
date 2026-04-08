@@ -1,12 +1,30 @@
 /**
  * Lotto Number Generator
  * Generates 5 sets of 6 unique numbers (1-45)
+ * Includes Dark/Light mode toggle with persistence
  */
 
 document.addEventListener('DOMContentLoaded', () => {
   const generateBtn = document.getElementById('generateBtn');
   const resultsContainer = document.getElementById('resultsContainer');
+  const themeToggle = document.getElementById('themeToggle');
+  const htmlElement = document.documentElement;
 
+  // --- Theme Logic ---
+  const savedTheme = localStorage.getItem('lotto-theme') || 'light';
+  htmlElement.setAttribute('data-theme', savedTheme);
+
+  const toggleTheme = () => {
+    const currentTheme = htmlElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    
+    htmlElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('lotto-theme', newTheme);
+  };
+
+  themeToggle.addEventListener('click', toggleTheme);
+
+  // --- Lotto Logic ---
   const generateLottoNumbers = () => {
     const numbers = new Set();
     while (numbers.size < 6) {
@@ -25,10 +43,8 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const displayNumbers = () => {
-    // Clear previous results
     resultsContainer.innerHTML = '';
 
-    // Generate 5 sets
     for (let i = 0; i < 5; i++) {
       const lottoSet = generateLottoNumbers();
       const row = document.createElement('div');
@@ -47,7 +63,6 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   generateBtn.addEventListener('click', () => {
-    // Add a little feedback effect on the button
     generateBtn.textContent = 'Generating...';
     generateBtn.disabled = true;
 

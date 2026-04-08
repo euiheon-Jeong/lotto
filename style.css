@@ -5,15 +5,28 @@
   --bg-color: #f8fafc;
   --text-color: #1e293b;
   --card-bg: #ffffff;
+  --row-bg: #f1f5f9;
+  --muted-text: #64748b;
   --glow-shadow: 0 0 15px rgba(99, 102, 241, 0.4);
   --deep-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
   --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  --transition-speed: 0.3s;
+}
+
+[data-theme="dark"] {
+  --bg-color: #0f172a;
+  --text-color: #f8fafc;
+  --card-bg: #1e293b;
+  --row-bg: #334155;
+  --muted-text: #94a3b8;
+  --deep-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease, border-color var(--transition-speed) ease;
 }
 
 body {
@@ -39,8 +52,45 @@ body {
   padding: 40px;
   border-radius: 24px;
   box-shadow: var(--deep-shadow);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
 }
+
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+#themeToggle {
+  background: var(--row-bg);
+  border: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  transition: all 0.2s ease;
+  color: var(--text-color);
+}
+
+#themeToggle:hover {
+  transform: scale(1.1);
+  background: var(--primary-color);
+  color: white;
+}
+
+[data-theme="dark"] .icon-sun { display: block; }
+[data-theme="dark"] .icon-moon { display: none; }
+[data-theme="light"] .icon-sun { display: none; }
+[data-theme="light"] .icon-moon { display: block; }
+
+/* Default (light) icons */
+.icon-sun { display: none; }
+.icon-moon { display: block; }
 
 header h1 {
   font-size: 3rem;
@@ -57,7 +107,7 @@ header h1 span {
 }
 
 header p {
-  color: #64748b;
+  color: var(--muted-text);
   margin-bottom: 30px;
   font-size: 1.1rem;
 }
@@ -77,8 +127,6 @@ header p {
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: var(--glow-shadow);
-  position: relative;
-  overflow: hidden;
 }
 
 .glow-button:hover {
@@ -87,8 +135,9 @@ header p {
   background: #4f46e5;
 }
 
-.glow-button:active {
-  transform: translateY(1px);
+.glow-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
 }
 
 .results-container {
@@ -102,7 +151,7 @@ header p {
   justify-content: center;
   gap: 12px;
   padding: 20px;
-  background: #f1f5f9;
+  background: var(--row-bg);
   border-radius: 16px;
   animation: slideIn 0.5s ease-out forwards;
   opacity: 0;
@@ -120,7 +169,7 @@ header p {
   width: 45px;
   height: 45px;
   border-radius: 50%;
-  background: white;
+  background: var(--card-bg);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -128,40 +177,34 @@ header p {
   font-size: 1.1rem;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   border: 2px solid transparent;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, border-color var(--transition-speed) ease;
 }
 
 .ball:hover {
   transform: scale(1.1);
 }
 
-/* Color schemes for balls */
 .ball.color-1 { border-color: #fbbf24; color: #b45309; }
 .ball.color-2 { border-color: #3b82f6; color: #1d4ed8; }
 .ball.color-3 { border-color: #ef4444; color: #b91c1c; }
 .ball.color-4 { border-color: #94a3b8; color: #334155; }
 .ball.color-5 { border-color: #10b981; color: #047857; }
 
+[data-theme="dark"] .ball.color-1 { color: #fcd34d; }
+[data-theme="dark"] .ball.color-2 { color: #60a5fa; }
+[data-theme="dark"] .ball.color-3 { color: #f87171; }
+[data-theme="dark"] .ball.color-4 { color: #cbd5e1; }
+[data-theme="dark"] .ball.color-5 { color: #34d399; }
+
 footer {
   margin-top: 40px;
-  color: #94a3b8;
+  color: var(--muted-text);
   font-size: 0.9rem;
 }
 
 @media (max-width: 600px) {
-  .container {
-    padding: 20px;
-  }
-  header h1 {
-    font-size: 2.2rem;
-  }
-  .lotto-row {
-    gap: 8px;
-    padding: 12px;
-  }
-  .ball {
-    width: 35px;
-    height: 35px;
-    font-size: 0.9rem;
-  }
+  .container { padding: 20px; }
+  header h1 { font-size: 2.2rem; }
+  .lotto-row { gap: 8px; padding: 12px; }
+  .ball { width: 35px; height: 35px; font-size: 0.9rem; }
 }
