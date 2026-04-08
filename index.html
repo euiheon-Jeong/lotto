@@ -1,14 +1,31 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello World</title>
-  <link href='/style.css' rel='stylesheet'>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lotto Number Generator</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Hello, world!</h1>
-  <button onclick="console.log('hello');">Press me</button>
-  <script defer type="text/javascript" src="/main.js"></script>
+  <div class="container">
+    <header>
+      <h1>Lucky <span>Lotto</span></h1>
+      <p>Your fortune starts here. Tap the button for 5 sets of lucky numbers!</p>
+    </header>
+
+    <main>
+      <div class="button-wrapper">
+        <button id="generateBtn" class="glow-button">Generate My Lucky Numbers</button>
+      </div>
+      <div id="resultsContainer" class="results-container">
+        <!-- Results will be injected here -->
+      </div>
+    </main>
+
+    <footer>
+      <p>Good luck!</p>
+    </footer>
+  </div>
+  <script type="module" src="main.js"></script>
 </body>
 </html>
