@@ -1,26 +1,23 @@
 # Lotto Number Generator Blueprint
 
 ## Overview
-A modern, vibrant web application that generates random lotto numbers. Users can click a button to receive 5 sets of 6 unique numbers between 1 and 45. Now supports both Dark and Light modes, and includes an affiliate inquiry form.
+A modern, vibrant web application that generates random lotto numbers. Now supports Dark/Light modes, affiliate inquiries via Formspree, and community comments via Disqus.
 
 ## Current State & Features
 - Initial setup with basic HTML, CSS, and JS structure.
 - Responsive design principles.
 - Modern aesthetic with interactive elements.
 - Dark/Light mode toggle with persistence.
-- **New:** Affiliate inquiry form powered by Formspree.
+- Affiliate inquiry form powered by Formspree.
+- **New:** Community comments powered by Disqus.
 
 ## Implementation Plan
 1.  **UI Development (`index.html`):**
-    - Add a "Contact Us" or "Affiliate Inquiry" section below the results.
-    - Create a form with fields for Name, Email, and Message.
-    - Set the form action to the provided Formspree endpoint.
+    - Add a "Community Comments" section.
+    - Integrate Disqus universal code snippet.
 2.  **Styling (`style.css`):**
-    - Style the form to match the modern aesthetic.
-    - Ensure form inputs and labels adapt to both light and dark themes.
-    - Add focus states and hover effects for form elements.
-3.  **Logic (`main.js`):**
-    - Simple client-side validation provided by HTML5 attributes.
+    - Style the comments section container.
+    - Ensure it matches the overall layout and theme.
 
 ## Action Steps
 - [x] Update `index.html` with the new structure.
@@ -32,4 +29,6 @@ A modern, vibrant web application that generates random lotto numbers. Users can
 - [x] Add theme persistence logic in JS.
 - [x] Add Affiliate Inquiry Form to `index.html`.
 - [x] Style the inquiry form in `style.css`.
+- [x] Integrate Disqus comments in `index.html`.
+- [x] Style the comments section in `style.css`.
 - [ ] Push changes to Git.

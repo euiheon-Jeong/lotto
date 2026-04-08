@@ -153,6 +153,26 @@ header p {
   text-align: left;
 }
 
+.comments-section {
+  margin-top: 60px;
+  padding-top: 40px;
+  border-top: 1px solid var(--row-bg);
+  text-align: left;
+}
+
+.comments-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+#disqus_thread {
+  background: var(--bg-color);
+  padding: 20px;
+  border-radius: 16px;
+  border: 1px solid var(--row-bg);
+}
+
 .inquiry-section h2 {
   font-size: 1.8rem;
   margin-bottom: 8px;
