@@ -9,13 +9,17 @@ A modern, vibrant web application that generates random lotto numbers. Now suppo
 - Modern aesthetic with interactive elements.
 - Dark/Light mode toggle with persistence.
 - Affiliate inquiry form powered by Formspree.
-- **New:** Community comments powered by Disqus.
+- Community comments powered by Disqus.
+- **New:** Google AdSense integration for monetization.
 
 ## Implementation Plan
-1.  **UI Development (`index.html`):**
+1.  **Monetization (`index.html`):**
+    - Integrate Google AdSense script in the `<head>`.
+    - Ensure `ads.txt` is present and correctly configured.
+2.  **UI Development (`index.html`):**
     - Add a "Community Comments" section.
     - Integrate Disqus universal code snippet.
-2.  **Styling (`style.css`):**
+3.  **Styling (`style.css`):**
     - Style the comments section container.
     - Ensure it matches the overall layout and theme.
 
@@ -31,4 +35,6 @@ A modern, vibrant web application that generates random lotto numbers. Now suppo
 - [x] Style the inquiry form in `style.css`.
 - [x] Integrate Disqus comments in `index.html`.
 - [x] Style the comments section in `style.css`.
+- [x] Add Google AdSense script to `index.html`.
+- [x] Verify `ads.txt` presence and content.
 - [ ] Push changes to Git.
