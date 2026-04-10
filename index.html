@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lotto Number Generator</title>
+  <title>Lucky Lotto - Number Generator & Strategy Hub</title>
   <meta name="google-adsense-account" content="ca-pub-7771163460019737">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7771163460019737"
      crossorigin="anonymous"></script>
@@ -11,46 +11,59 @@
 </head>
 <body>
   <div class="container">
-    <div class="theme-toggle">
-      <button id="themeToggle" aria-label="Toggle dark mode">
-        <span class="icon-sun">☀️</span>
-        <span class="icon-moon">🌙</span>
-      </button>
-    </div>
-    <header>
+    <nav class="main-nav">
+      <div class="logo">Lucky <span>Lotto</span></div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="strategy/probability-math.html">Strategy</a></li>
+        <li><a href="culture/psychology-of-luck.html">Culture</a></li>
+        <li><a href="info/how-to-play.html">Guides</a></li>
+      </ul>
+      <div class="theme-toggle">
+        <button id="themeToggle" aria-label="Toggle dark mode">
+          <span class="icon-sun">☀️</span>
+          <span class="icon-moon">🌙</span>
+        </button>
+      </div>
+    </nav>
+
+    <header class="hero">
       <h1>Lucky <span>Lotto</span></h1>
-      <p>Your fortune starts here. Tap the button for 5 sets of lucky numbers!</p>
+      <p>Your ultimate destination for lotto generation, strategy, and analysis.</p>
     </header>
 
     <main>
-      <!-- Ad unit 1: Header -->
-      <ins class="adsbygoogle"
-           style="display:block"
-           data-ad-client="ca-pub-7771163460019737"
-           data-ad-slot="YOUR_AD_SLOT_ID"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
-      <script>
-           (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
+      <!-- AdSense Auto Ads will handle most placements, but here's a placeholder for manual units if needed -->
+      
+      <section class="tool-section">
+        <div class="button-wrapper">
+          <button id="generateBtn" class="glow-button">Generate My Lucky Numbers</button>
+        </div>
+        <div id="resultsContainer" class="results-container">
+          <!-- Results will be injected here -->
+        </div>
+      </section>
 
-      <div class="button-wrapper">
-        <button id="generateBtn" class="glow-button">Generate My Lucky Numbers</button>
-      </div>
-      <div id="resultsContainer" class="results-container">
-        <!-- Results will be injected here -->
-      </div>
-
-      <!-- Ad unit 2: Below results -->
-      <ins class="adsbygoogle"
-           style="display:block"
-           data-ad-client="ca-pub-7771163460019737"
-           data-ad-slot="YOUR_AD_SLOT_ID"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
-      <script>
-           (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
+      <section class="featured-articles">
+        <h2>Expert Lotto Insights</h2>
+        <div class="article-grid">
+          <div class="article-card">
+            <h3>Probability Math</h3>
+            <p>Understand the science behind lottery odds and how to pick smarter.</p>
+            <a href="strategy/probability-math.html" class="read-more">Learn Strategy</a>
+          </div>
+          <div class="article-card">
+            <h3>Psychology of Luck</h3>
+            <p>Explore why humans believe in lucky numbers and charms.</p>
+            <a href="culture/psychology-of-luck.html" class="read-more">Read More</a>
+          </div>
+          <div class="article-card">
+            <h3>How to Play</h3>
+            <p>New to lotto? Start here with our comprehensive beginner's guide.</p>
+            <a href="info/how-to-play.html" class="read-more">View Guide</a>
+          </div>
+        </div>
+      </section>
 
       <section class="inquiry-section">
         <h2>Affiliate Inquiry</h2>
@@ -71,32 +84,29 @@
           <button type="submit" class="submit-button">Send Message</button>
         </form>
       </section>
+
       <section class="comments-section">
         <h2>Community Comments</h2>
         <div id="disqus_thread"></div>
         <script>
-            /**
-            *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-            *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-            /*
-            var disqus_config = function () {
-            this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-            };
-            */
-            (function() { // DON'T EDIT BELOW THIS LINE
+            (function() { 
             var d = document, s = d.createElement('script');
             s.src = 'https://nayahoney.disqus.com/embed.js';
             s.setAttribute('data-timestamp', +new Date());
             (d.head || d.body).appendChild(s);
             })();
         </script>
-        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
       </section>
     </main>
 
-    <footer>
-      <p>Good luck!</p>
+    <footer class="main-footer">
+      <div class="footer-links">
+        <a href="info/about-us.html">About Us</a>
+        <a href="info/privacy-policy.html">Privacy Policy</a>
+        <a href="info/terms-of-service.html">Terms of Service</a>
+        <a href="info/contact.html">Contact</a>
+      </div>
+      <p>&copy; 2026 Lucky Lotto Hub. Play responsibly.</p>
     </footer>
   </div>
   <script type="module" src="main.js"></script>
